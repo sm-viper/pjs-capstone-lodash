@@ -111,17 +111,17 @@ const _ = {
 
   //39 chunk
   //--------------------------------------------------------------
-  chunk (array, size) {
+  chunk (array, size = 1) {
     //initialize size to 1 if not specified
     if (size === undefined) {
       size = 1;
     }
-    arrayChunks = [];
-    for (var i = 0; i < array.length; i + size) {
-      let arrayChunk = array.slice(1, i + size);
+    let arrayChunks = [];
+    for (var i = 0; i < array.length; i += size) {
+      let arrayChunk = array.slice(i, i + size);
       arrayChunks.push(arrayChunk);
     }
-    return arrayChunck;
+    return arrayChunks;
   }
 
 };
